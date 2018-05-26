@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <nav class="navbar navbar-default">
+        <a class="navbar-brand" href=/homes/index><strong>Stuff</strong></a>
+        <a class="navbar-brand" href=/homes/index>To-Do</a>
+        <span class="navbar-brand pull-right">Hello, <strong><%= current_user.email %></strong>!
+        <%=link_to 'Logout', destroy_user_session_path, :method => :delete %></span>
+      </nav>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

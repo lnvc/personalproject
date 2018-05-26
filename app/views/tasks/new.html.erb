@@ -1,0 +1,8 @@
+<h1>New Item</h1>
+<%= form_for @task do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br>
+	<%= f.label :deadline %>
+	<%= f.text_field :deadline %><br>
+	<%= f.submit %>
+<% end %>
