@@ -2,12 +2,12 @@
 
 one:
   name: MyText
-  deadline: 2018-05-27
   status: false
   priority: 1
+  deadline: 2018-05-28
 
 two:
   name: MyText
-  deadline: 2018-05-27
   status: false
   priority: 1
+  deadline: 2018-05-28

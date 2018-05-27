@@ -1,0 +1,20 @@
+
+
+<table style="width: 100%">
+	<tr>
+		<th>Task</th>
+		<th>Deadline</th>
+	</tr>
+	<% @tasks.order("priority DESC").order("deadline").each do |task| %>
+	<tr>
+		<td><%= task.name %></td>
+		<td><%= task.deadline %>
+		<% if (task.deadline - Date.today).to_i <= 2 %>
+			<span class="badge badge-danger">URGENT!!<%= (task.deadline - Date.today).to_i %> days left!</span>
+		<% end %>
+		</td>
+		<td><%= link_to "edit", edit_task_path(task) %>
+		<td><%= link_to "Uncheck", task, method: :delete, class: "btn btn-primary" %>
+	</tr>
+	<% end %>
+</table>
