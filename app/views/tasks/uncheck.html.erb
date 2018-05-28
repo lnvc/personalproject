@@ -1,20 +1,29 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+	<%= stylesheet_link_tag "tasks" %>
+</head>
+<body>
+<div class="col-md-6"><h1>tapos na</h1></div><br>
 
 <table style="width: 100%">
 	<tr>
-		<th>Task</th>
-		<th>Deadline</th>
+		<th><div class="col-md-3">Task</div></th>
+		<th><div class="col-md-3">Deadline</div></th>
 	</tr>
 	<% @tasks.order("priority DESC").order("deadline").each do |task| %>
-	<tr>
-		<td><%= task.name %></td>
-		<td><%= task.deadline %>
+	<tr id="borders">
+		<td><div class=col-md-3"><%= task.name %></div></td>
+		<td><div class="col-md-3"><%= task.deadline %>
 		<% if (task.deadline - Date.today).to_i <= 2 %>
 			<span class="badge badge-danger">URGENT!!<%= (task.deadline - Date.today).to_i %> days left!</span>
 		<% end %>
+		</div>
 		</td>
-		<td><%= link_to "edit", edit_task_path(task) %>
-		<td><%= link_to "Uncheck", task, method: :delete, class: "btn btn-primary" %>
+		<td><div class="col-md-3"><%= link_to "edit", edit_task_path(task) %></div></td>
+		<td><div class="col-md-3"><%= link_to "Uncheck", task, method: :delete, class: "btn btn-primary" %></div></td>
 	</tr>
 	<% end %>
 </table>
+</body>
+</html>

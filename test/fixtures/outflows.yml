@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spent: 2018-05-28
+  item: MyText
+  price: 1
+
+two:
+  spent: 2018-05-28
+  item: MyText
+  price: 1

@@ -1,0 +1,11 @@
+<div class="col-md-10">add money >>
+<% if Saving.where("month == ?", Date.today.month).where("month == ?", Date.today.year).exists? %>
+<% else %>
+	<%= form_for @accumulated do |f| %>
+		<%= f.number_field :currvalue %>
+		<%= f.submit %>
+	<% end %>
+<% end %>
+</div>
+total munny:
+<%= Saving.last.currvalue %>

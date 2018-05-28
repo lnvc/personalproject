@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  month: 2018-05-28
+  target: 1
+  currvalue: 1
+
+two:
+  month: 2018-05-28
+  target: 1
+  currvalue: 1

@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  get 'savings/index'
   get 'tasks/index'
   get 'tasks/uncheck'
   get 'publics/index'
   devise_scope :user do 
   	authenticated :user do
   		resources :tasks
-  		root 'tasks#index'
+  		resources :savings
+  		# resources :outflows
+  		root 'tasks#index', as: :authenticated_user_root
   	end
   end
   devise_for :users

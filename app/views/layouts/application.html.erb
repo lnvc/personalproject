@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Todo</title>
+    <title>stuff</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,13 +11,12 @@
 
   <body>
     <% if user_signed_in? %>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/tasks/index"><strong>Stuff</strong></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/tasks/index"><strong>stuff i need/want</strong></a>
     <a class="navbar-brand" href="/tasks/index">To Do <span class="sr-only">(current)</span></a>
     <a class="navbar-brand" href="/tasks/uncheck">uncheck <span class="sr-only">(current)</span></a>
-    <a class="navbar-nav mr-auto" >signed in: <strong><%= current_user.email %></strong></a>
+    <a class="navbar-brand" href="/savings/index">allowance <span class="sr-only">(current)</span></a>
     <%= link_to "Logout",  destroy_user_session_path, method: :delete %>
-
 </nav>
     <% end %>
     <%= yield %>

@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_27_202340) do
+ActiveRecord::Schema.define(version: 2018_05_28_102431) do
+
+  create_table "outflows", force: :cascade do |t|
+    t.date "spent"
+    t.text "item"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "savings", force: :cascade do |t|
+    t.date "month"
+    t.integer "target"
+    t.integer "currvalue"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.text "name"
